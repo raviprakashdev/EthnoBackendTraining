@@ -1,28 +1,29 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 var cors = require("cors");
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 // var db2Connection = require('./database/db.js');
-
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 const port = 8002;
-// const url = `mongodb+srv://raviprakash01a:ethno@cluster0.gyv2ano.mongodb.net/?retryWrites=true&w=majority`;
-// const connectionParams = {
-//   useNewUrlParser: true,
-// };
+const url = `mongodb+srv://raviprakash01a:ethno@cluster0.gyv2ano.mongodb.net/?retryWrites=true&w=majority`;
+const connectionParams = {
+  useNewUrlParser: true,
+};
 
 // database connection
-// mongoose
-//   .connect(url, connectionParams)
-//   .then(() => {
-//     console.log("Connected to the database ");
-//   })
-//   .catch((err) => {
-//     console.error(`Error connecting to the database. n${err}`);
-//   });
+mongoose
+  .connect(url, connectionParams)
+  .then(() => {
+    console.log("Connected to the database ");
+  })
+  .catch((err) => {
+    console.error(`Error connecting to the database. n${err}`);
+  });
+
+// mongoose.connect("mongodb+srv://raviprakash01a:ethno@cluster0.gyv2ano.mongodb.net/?retryWrites=true&w=majority",connectionParams)
 
 // endpoint
 
@@ -55,6 +56,9 @@ function add(num1, num2) {
   return num1 + num2;
 }
 
+// import routes
+require("./routes/route")(app);
+
 app.listen(port, () => {
   console.log("we started our server");
 });
@@ -74,3 +78,10 @@ app.listen(port, () => {
 // m - mongodb
 // v - react
 // c - express
+// {
+//   id:"",
+//   name:"",
+//   add:"",
+//   contact:""
+
+// }
