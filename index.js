@@ -8,7 +8,8 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 const port = 8002;
-const url = `mongodb+srv://raviprakash01a:ethno@cluster0.gyv2ano.mongodb.net/?retryWrites=true&w=majority`;
+// const url = `mongodb+srv://raviprakash01a:ethno@cluster0.gyv2ano.mongodb.net/?retryWrites=true&w=majority`;
+const url = `mongodb+srv://admin:admin@rmm-support.snpasfp.mongodb.net/?retryWrites=true&w=majority`;
 const connectionParams = {
   useNewUrlParser: true,
 };
@@ -63,6 +64,8 @@ app.listen(port, () => {
   console.log("we started our server");
 });
 
+
+
 // nodemon
 // bodyparser
 
@@ -85,3 +88,4 @@ app.listen(port, () => {
 //   contact:""
 
 // }
+// Big Data;
